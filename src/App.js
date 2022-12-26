@@ -1,4 +1,5 @@
-import LoginForm from './Form/LoginForm'
+import LoginForm from './Form/LoginForm';
+import './Form/styles.css'
 function App() {
   return (
     <div className="App">

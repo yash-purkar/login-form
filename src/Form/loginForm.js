@@ -23,27 +23,40 @@ function LoginForm() {
   }
 
   return (
-    <div>
-      <form onSubmit={submitForm}>
+    <div className="main-div">
+      <form onSubmit={submitForm} className="form-container">
+        <h1 id="heading">Login Here</h1>
         <div>
-          <label htmlFor="email">Email : </label>
-          <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="off" />
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            autoComplete="off"
+            placeholder="Email"
+          />
         </div>
 
         <div>
-          <label htmlFor="password">Password : </label>
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="off" />
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            autoComplete="off"
+            placeholder="Password" />
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit" id="submit-btn">Login</button>
       </form>
 
       <div>
         {
           allData.map((currElem, indexNo) => {
             return (
-              <div key={indexNo}>
-                <h3>{currElem.email} {currElem.password}</h3>
+              <div key={indexNo} id="output">
+                <p id="output-email">{currElem.email}</p>
+                <p >{currElem.password}</p>
               </div>
             )
           })
