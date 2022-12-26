@@ -1,4 +1,4 @@
-import LoginForm from './Form/loginForm'
+import LoginForm from './Form/LoginForm'
 function App() {
   return (
     <div className="App">
