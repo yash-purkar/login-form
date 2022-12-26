@@ -9,12 +9,17 @@ function LoginForm() {
   function submitForm(e) {
     e.preventDefault();
 
-    const newData = {
-      email: email,
-      password: password
+    if (email && password) {
+      const newData = {
+        email: email,
+        password: password
+      }
+      // console.log(newData)
+      setAllData([...allData, newData]);
     }
-    // console.log(newData)
-    setAllData([...allData, newData]);
+    else {
+      alert("Plzz fill the all data first.")
+    }
   }
 
   return (
@@ -35,10 +40,9 @@ function LoginForm() {
 
       <div>
         {
-          allData.map((currElem) => {
-
+          allData.map((currElem, indexNo) => {
             return (
-              <div>
+              <div key={indexNo}>
                 <h3>{currElem.email} {currElem.password}</h3>
               </div>
             )
